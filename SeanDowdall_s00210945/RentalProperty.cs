@@ -17,6 +17,7 @@ namespace SeanDowdall_s00210945
         public string Description { get; set; }
 
         //constructors
+        
 
         //Methods
         public void increaseRent_ByPercentage(decimal increasePercent)

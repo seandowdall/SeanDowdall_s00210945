@@ -9,38 +9,67 @@ namespace DataManagement
 {
     class Program
     {
+        enum RentalType
+        {
+            House,
+            Flat,
+            Share
+        }
         static void Main(string[] args)
         {
-            Gam db = new GameData();
+            RentalData db = new RentalData();
+
+
 
             using (db)
             {
-                Game g1 = new Game()
+                RentalProperty p1 = new RentalProperty()
                 {
-                    Name = "It Takes Two",
-                    Platform = "PC, Xbox, PS, Switch",
-                    Metacritic_Score = 88,
-                    Price = 69.99m,
-                    Game_Image = "/images/ittakes2.jpg",
-                    Description = "From Hazelight comes bla bla bla bla bla"
-
+                    Price = 400,
+                    RentalType = RentalType.Flat,
+                    Description = "A modern 1 bedroom apartment located close to the campus." +
+                  "  The accomodation comprises of 1 en-suite bedroom with a study area, " +
+                  "a small kitchen and a lounge/dining room",
+                    Location = "Town Centre"
                 };
-                
 
-                Console.WriteLine("gmaes have been created");
+                RentalProperty p2 = new RentalProperty()
+                {
+                    Price = 400,
+                    RentalType = RentalType.House,
+                    Description = "A modern 4 bedroom townhouse located 2 km from the campus. " +
+                    "The house has 4 large double bedrooms with ample space for a desk, " +
+                    "a large kitchen with all mod cons.  " +
+                    "There is also a dining room and a large sitting room",
+                    Location = "Ballinode"
+                };
+
+                RentalProperty p3 = new RentalProperty()
+                {
+                    Price = 400,
+                    RentalType = RentalType.Share,
+                    Description = "1 bedroom available to share in a 3 bedroom house located in the " +
+                    "beautiful seaside village of Strandhill.  The property is located on the bus route to " +
+                    "IT Sligo with regular buses to and from the campus",
+                    Location = "Strandhill"
+                };
+
+
+                Console.WriteLine("Rental Properties have been created");
 
                 //add to games table and save changes
 
-                db.Games.Add(g1);
-                db.Games.Add(g2);
-                db.Games.Add(g3);
-                db.Games.Add(g4);
+                db.RentalProperties.Add(p1);
+                db.RentalProperties.Add(p2);
+                db.RentalProperties.Add(p3);
 
-                Console.WriteLine("Games have been added to table");
+
+                Console.WriteLine("Rental Properties have been added to table");
 
                 db.SaveChanges();
                 Console.WriteLine("Data has been saved to DB, hit enter to continue");
                 Console.ReadLine();
             }
+        }
     }
 }

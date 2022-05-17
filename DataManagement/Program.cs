@@ -9,17 +9,18 @@ namespace DataManagement
 {
     class Program
     {
-        enum RentalType
+        public enum RentalType
         {
             House,
             Flat,
             Share
         }
+        
         static void Main(string[] args)
         {
+            //problems with database connection - needed to put code in xaml.cs to move on
+
             RentalData db = new RentalData();
-
-
 
             using (db)
             {

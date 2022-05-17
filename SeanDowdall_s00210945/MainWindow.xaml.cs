@@ -24,5 +24,25 @@ namespace SeanDowdall_s00210945
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lbxProperties_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //determine what was selected
+            RentalProperty selected = lbxProperties.SelectedItem as RentalProperty;
+
+            //check not null
+            if (selected != null)
+            {
+                //update display
+                tblkDescription.Text = selected.GetDescription(); //get details method in games class
+                imgGameImage.Source = new BitmapImage(new Uri(selected.Game_Image, UriKind.Relative));
+
+            }
+        }
     }
 }

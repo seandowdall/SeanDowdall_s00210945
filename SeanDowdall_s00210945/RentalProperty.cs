@@ -16,14 +16,15 @@ namespace SeanDowdall_s00210945
         public decimal Price { get; set; }
         public string Description { get; set; }
 
-        //constructors
-        
-
         //Methods
         public void increaseRent_ByPercentage(decimal increasePercent)
         {
             
             Price = Price * (1 + increasePercent);
+        }
+        public string GetDescription()
+        {
+            return $"Description: {Description}";
         }
     }//end of RentalProperty Class
     public class RentalData : DbContext

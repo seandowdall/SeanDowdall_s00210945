@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SeanDowdall_s00210945"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    
     <Grid>
-        
+     
+        <Grid.RowDefinitions>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="353*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="lbxProperties" Grid.Row="1" Grid.Column="0" Margin="10" SelectionChanged="lbxProperties_SelectionChanged"/>
+        <Label Content="Property Listing" HorizontalAlignment="Center" Margin="10" Grid.Row="0" Grid.Column="0" FontWeight="Bold" FontSize="25"/>
+        <TextBlock Name="tblkDescription" Grid.Row="1" Grid.Column="1" Margin="10"/>
+        <Button Name="btnAdd" Grid.Row="1" Grid.Column="2" Margin="20,20,20,303" Content="Add"/>
+       
     </Grid>
 </Window>
